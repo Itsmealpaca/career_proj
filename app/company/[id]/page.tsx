@@ -115,9 +115,9 @@ export default async function CompanyDetailPage({ params }: { params: { id: stri
     }
   }
 
-  const current = [];
-  const past = [];
-  for (const value of aggregated.values()) {
+  const current: typeof aggregated extends Map<any, infer V> ? V[] : never[] = [];
+  const past: typeof current = [];
+  for (const value of Array.from(aggregated.values())) {
     if (value.isCurrent) {
       current.push(value);
     } else {
