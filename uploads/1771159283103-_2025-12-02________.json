@@ -1,0 +1,97 @@
+[
+  {
+    "headline": "Junior Android Developer",
+    "summary": "",
+    "firstName": "윤호",
+    "lastName": "이",
+    "photoUrl": "https://media.licdn.com/dms/image/v2/D5603AQEJ3lOxlKTO1g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714400848873?e=1766016000&v=beta&t=UAxtbxwMwavO7BgLgYp1-gnKxrv5ykiDsGd13qtk5XI",
+    "skills": [
+      "jetpack compose",
+      "clean architecture",
+      "Hilt",
+      "multi module",
+      "mockk",
+      "retrofit",
+      "테스트",
+      "Figma",
+      "테스트주도개발",
+      "TDD",
+      "Trello",
+      "ci cd",
+      "Robolectric",
+      "안드로이드",
+      "Android",
+      "AAC",
+      "Kotlin",
+      "Git",
+      "Kanban",
+      "Notion",
+      "JUnit",
+      "Zeplin"
+    ],
+    "educations": [
+      {
+        "degreeName": "공학사",
+        "fieldOfStudy": "컴퓨터소프트웨어",
+        "schoolName": "인덕대학교/ Induk University",
+        "startEndDate": "2018 - 2024",
+        "description": "",
+        "grade": "3.72",
+        "originStartEndDate": {
+          "startDateOn": {
+            "month": 3,
+            "year": 2018
+          },
+          "endDateOn": {
+            "month": 2,
+            "year": 2024
+          }
+        }
+      }
+    ],
+    "positions": [
+      {
+        "companyName": "슈퍼진",
+        "title": "Android Developer",
+        "companyLocation": "판교",
+        "description": "",
+        "companyLogo": "",
+        "startEndDate": {
+          "start": {
+            "month": 5,
+            "year": 2024
+          }
+        }
+      },
+      {
+        "companyName": "알서포트",
+        "title": "Android Developer",
+        "companyLocation": "잠실",
+        "description": "RemoteCall 유지보수 및 고도화\nWindow To Android FTP SDK 개발",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHOamvDUS3JnA/company-logo_400_400/company-logo_400_400/0/1664519674142/rsupport_co__ltd__logo?e=1766016000&v=beta&t=0xJGj840l3AmBp9q8-x39ETyKU33aAtuwlNpJ2z7oXg",
+        "startEndDate": {
+          "start": {
+            "month": 9,
+            "year": 2022
+          },
+          "end": {
+            "month": 5,
+            "year": 2024
+          }
+        }
+      }
+    ],
+    "totalDuration": {
+      "years": 3,
+      "months": 4
+    },
+    "linkedinUrl": "https://www.linkedin.com/in/%EC%9C%A4%ED%98%B8-%EC%9D%B4-b4309a263",
+    "website": [
+      "https://velog.io/@lyh990517/posts - PERSONAL"
+    ],
+    "industryName": "소프트웨어 개발",
+    "projects": [],
+    "recommendations": [],
+    "profileId": "AEMAAECeUuMBX0boQ0U4SD8Nma8lcVQeLcN25r4"
+  }
+]

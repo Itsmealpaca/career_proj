@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Candidate {
+  id              String   @id @default(uuid())
+  source          String   @default("linkedin")
+  sourceProfileId String?  @unique
+  profileUrl      String?  @unique
+  fullName        String?
+  headline        String?
+  summary         String?
+  locationText    String?
+  industry        String?
+  isDeleted       Boolean  @default(false)
+  deletedAt       DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  rawJson         Json
+
+  positions   CandidatePosition[]
+  educations  CandidateEducation[]
+  skills      CandidateSkill[]
+}
+
+model Company {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?  // 회사 대략적인 소개
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CandidatePosition {
+  id            String    @id @default(uuid())
+  candidateId   String
+  companyName   String
+  title         String
+  employmentType String?
+  startDate     DateTime?
+  endDate       DateTime?
+  isCurrent     Boolean   @default(false)
+  description   String?
+  locationText  String?
+  sequenceIndex Int
+
+  candidate Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+}
+
+model CandidateEducation {
+  id           String    @id @default(uuid())
+  candidateId  String
+  schoolName   String?
+  degree       String?
+  fieldOfStudy String?
+  startDate    DateTime?
+  endDate      DateTime?
+  description  String?
+
+  candidate Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+}
+
+model CandidateSkill {
+  id              String @id @default(uuid())
+  candidateId     String
+  skillName       String
+  normalizedSkill String
+
+  candidate Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+}
+
+model IngestRun {
+  id         String    @id @default(uuid())
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  total      Int       @default(0)
+  inserted   Int       @default(0)
+  updated    Int       @default(0)
+  failed     Int       @default(0)
+
+  errors IngestError[]
+}
+
+model IngestError {
+  id           String   @id @default(uuid())
+  runId        String
+  candidateKey String?
+  errorMessage String
+  rawFragment  Json?
+
+  run IngestRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+}

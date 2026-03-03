@@ -1,0 +1,112 @@
+[
+  {
+    "headline": "Product owner / manager",
+    "summary": "PO",
+    "firstName": "여송",
+    "lastName": "윤",
+    "photoUrl": "https://media.licdn.com/dms/image/v2/D5603AQEbECHw_qjrVQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711466353025?e=1767225600&v=beta&t=_xFQbqTk3Jlr94LzjMdHqIB_tm4HyxUVHG9q2zGi3GA",
+    "skills": [
+      "프로젝트 관리",
+      "제품관리",
+      "성장마케팅",
+      "데이터분석",
+      "제품출시"
+    ],
+    "educations": [
+      {
+        "degreeName": "학사",
+        "fieldOfStudy": "독일어 및 문학",
+        "schoolName": "한양대학교",
+        "startEndDate": "2009 - 2017",
+        "description": "",
+        "grade": "",
+        "originStartEndDate": {
+          "startDateOn": {
+            "month": 3,
+            "year": 2009
+          },
+          "endDateOn": {
+            "month": 2,
+            "year": 2017
+          }
+        }
+      }
+    ],
+    "positions": [
+      {
+        "companyName": "바비톡",
+        "title": "제품 책임자(PO)",
+        "companyLocation": "대한민국 서울",
+        "description": "1. Activation/Retention 개선\n2. Data 기반 신사업 전략 수립 - 실행 - 제품화",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQH2uRSrtGYTwA/company-logo_400_400/company-logo_400_400/0/1725354694341/_1____logo?e=1767225600&v=beta&t=JHy2dfV24dQ5aEKn2Zx8UjaXiyAEvB6clMftSSLxN8o",
+        "startEndDate": {
+          "start": {
+            "month": 7,
+            "year": 2024
+          }
+        }
+      },
+      {
+        "companyName": "지엔터프라이즈(Z ENTERPRISE)",
+        "title": "Product Owner",
+        "companyLocation": "대한민국 서울",
+        "description": "B2C 종합소득세 환급서비스 Product owner\n1. 매출 증대를 위한 Product growth 전략 수립 및 실행 (가설 수립 - 실험 - 검증 iteration)\n2. 전사 데이터 관련 요구사항 구조화 및 데이터 리터러시 개선 (택소노미 설계, 믹스패널 도입 등)\n3. 회원계 리팩토링, 백오피스 구축 등 제품팀 업무 효율화 작업",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQEj2FjtExL1BA/company-logo_400_400/company-logo_400_400/0/1660008124432/zenterpriseinc_logo?e=1767225600&v=beta&t=TdzXliEPd-djF1BySKsRNqFnFZUHJdqccfxxJ3W0lXQ",
+        "startEndDate": {
+          "start": {
+            "month": 9,
+            "year": 2023
+          },
+          "end": {
+            "month": 6,
+            "year": 2024
+          }
+        }
+      },
+      {
+        "companyName": "핀다(Finda)",
+        "title": "Product Owner",
+        "companyLocation": "대한민국 서울",
+        "description": "1.대환대출 서비스 Product owner\n- 내외부 환경에 따른 제품 문제정의 및 전사 방향성 기반 제품 로드맵 구축 및 실행\n2.마이데이터/오픈뱅킹 서비스 Product owner\n- Retention 증대를 위한 제품 고도화 전략 수립 및 실행\n- 전사 비즈니스 방향성 맟 사용자 니즈 기반 제품 기획 및 구축",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQG9yribRxobMA/company-logo_400_400/company-logo_400_400/0/1630672525024/_finda__logo?e=1767225600&v=beta&t=fPpZiDqB4GLYnyLfSFDTAL2SZlxuzRrq4e-qj-Hn1m0",
+        "startEndDate": {
+          "start": {
+            "month": 3,
+            "year": 2022
+          },
+          "end": {
+            "month": 6,
+            "year": 2023
+          }
+        }
+      },
+      {
+        "companyName": "banksalad (뱅크샐러드)",
+        "title": "Associate Product Manager",
+        "companyLocation": "대한민국",
+        "description": "1. B2B 마이데이터 Product manager\n- 데이터 비즈니스 구조설계\n- 시중 금융사 API 분석 기반 표준 API 설계\n2. API 연동 Project manager\n- API 연동 표준화 및 프로젝트 관리",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQFl8VPYYf4enQ/company-logo_400_400/company-logo_400_400/0/1630641965965/_logo?e=1767225600&v=beta&t=NRSEEhuhDBvZgkyscc9N7HTT_csRFJ4NFEnz_fR1qOM",
+        "startEndDate": {
+          "start": {
+            "month": 3,
+            "year": 2020
+          },
+          "end": {
+            "month": 8,
+            "year": 2021
+          }
+        }
+      }
+    ],
+    "totalDuration": {
+      "years": 5,
+      "months": 2
+    },
+    "linkedinUrl": "https://www.linkedin.com/in/%EC%97%AC%EC%86%A1-%EC%9C%A4-123447283",
+    "website": [],
+    "industryName": "IT 서비스 및 IT 컨설팅",
+    "projects": [],
+    "recommendations": [],
+    "profileId": "AEMAAETxU-sBmoxEOLbSEG4JkOii3MJG4h2UpWk"
+  }
+]

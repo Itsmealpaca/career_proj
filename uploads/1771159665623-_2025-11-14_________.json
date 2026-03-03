@@ -1,0 +1,70 @@
+[
+  {
+    "headline": ".",
+    "summary": "",
+    "firstName": "태정",
+    "lastName": "박",
+    "photoUrl": "https://media.licdn.com/dms/image/v2/D5603AQETfAk8pFp-5A/profile-displayphoto-shrink_400_400/B56ZbIgU_XH0Ag-/0/1747120640562?e=1764806400&v=beta&t=9DRWgo7vBcWqQhh7Wg_hHzEKagwRAFoEoLzOwvjewKk",
+    "skills": [],
+    "educations": [
+      {
+        "degreeName": "",
+        "fieldOfStudy": "컴퓨터공학",
+        "schoolName": "세종대학교",
+        "startEndDate": "2018 - 2022",
+        "description": "",
+        "grade": "",
+        "originStartEndDate": {
+          "startDateOn": {
+            "year": 2018
+          },
+          "endDateOn": {
+            "year": 2022
+          }
+        }
+      }
+    ],
+    "positions": [
+      {
+        "companyName": "대한민국 육군",
+        "title": "GIS SW개발담당",
+        "companyLocation": "강원도 인제",
+        "description": "대한민국 육군에서 GIS SW 신규기능개발과 유지보수를 담당했습니다.\n\n실시간 음성데이터 STT 파이프라인(  whisper finetuning ) 업무자동화 ( 60% 대체 ) \n군사용어 음성데이터 수집 / 학습 모델 버전 관리 시스템 개발\n\n산간지역 엣지 디바이스 데이터분석 통신성공률 +8% 달성 기여",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQEFqXX5FK0ANA/company-logo_400_400/company-logo_400_400/0/1655632358155/rok_army_logo?e=1764806400&v=beta&t=UYlzIxbtkrsdKtXZVLj-aGcOh2w4BrIyjwI2GJrOHfo",
+        "startEndDate": {
+          "start": {
+            "month": 11,
+            "year": 2022
+          }
+        }
+      },
+      {
+        "companyName": "헬로콕",
+        "title": "Founder",
+        "companyLocation": "",
+        "description": "칵테일 키트 스마트 오더 서비스 창업\n\n* 업무\n- 서울시 영세 자영업자 ( 음식점 ) 대상 영업\n- 인스타그램과 페이스북을 활용 한 콘텐츠 / 퍼포먼스 마케팅\n- 퍼포먼스 마케팅 : G/A,naver,kakao,googld ads, facebook\n- 제품기획 / 제작\n\n* 성과\n- 스마트스토어 판매 퍼포먼스 마케팅 ROAS 70% -> 1300% 달성\n- 논알콜 피봇팅 이후 2개월 간 약 1000만원 매출 발생\n- 2020 예비창업패키지 비대면 분야 선정\n- 2020 서울시 캠퍼스타운 ( 세종대 ) 창업대회 대상 외 수상 다수",
+        "companyLogo": "",
+        "startEndDate": {
+          "start": {
+            "month": 9,
+            "year": 2020
+          },
+          "end": {
+            "month": 4,
+            "year": 2022
+          }
+        }
+      }
+    ],
+    "totalDuration": {
+      "years": 4,
+      "months": 9
+    },
+    "linkedinUrl": "https://www.linkedin.com/in/%ED%83%9C%EC%A0%95-%EB%B0%95-423386200",
+    "website": [],
+    "industryName": "제조",
+    "projects": [],
+    "recommendations": [],
+    "profileId": "AEMAADNQFtsBuFu1RikwzdItd90OBoZVtBO5msg"
+  }
+]
