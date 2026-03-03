@@ -262,7 +262,7 @@ export default function AdminIngestPage() {
                 <p className="font-medium text-red-800">
                   {e.candidateKey ?? "키 없음"}: {e.errorMessage}
                 </p>
-                {e.rawFragment && (
+                {e.rawFragment != null && (
                   <pre className="mt-2 p-2 bg-white text-xs overflow-auto max-h-32">
                     {JSON.stringify(e.rawFragment, null, 2)}
                   </pre>
