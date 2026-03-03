@@ -15,6 +15,7 @@ model Candidate {
   source          String   @default("linkedin")
   sourceProfileId String?  @unique
   profileUrl      String?  @unique
+  profileImageUrl String?
   fullName        String?
   headline        String?
   summary         String?
@@ -32,11 +33,19 @@ model Candidate {
 }
 
 model Company {
-  id          String   @id @default(uuid())
-  name        String   @unique
-  description String?  // 회사 대략적인 소개
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(uuid())
+  name          String   @unique
+  description   String?  // 기업 개요
+  logoUrl       String?
+  products      String?  // 주요 제품/서비스 설명
+  keywords      String?  // 연관 키워드 (쉼표 구분 문자열 등)
+  fundingRound  String?  // 최근 투자 라운드
+  totalFunding  Int?     // 누적 투자액 (단위는 자유롭게 사용)
+  foundedAt     DateTime?
+  headcount     Int?     // 임직원 수
+  annualRevenue Int?     // 연 매출
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model CandidatePosition {

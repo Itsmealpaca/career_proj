@@ -27,5 +27,24 @@ export async function GET(
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  return NextResponse.json(candidate);
+  const companyNames = Array.from(
+    new Set(candidate.positions.map((p) => p.companyName).filter(Boolean))
+  );
+
+  const companies =
+    companyNames.length === 0
+      ? []
+      : await prisma.company.findMany({
+          where: { name: { in: companyNames } },
+          select: { name: true },
+        });
+
+  const companyLogos = Object.fromEntries(
+    companies.map((c) => [c.name, null as string | null])
+  );
+
+  return NextResponse.json({
+    ...candidate,
+    companyLogos,
+  });
 }

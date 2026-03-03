@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { Header } from "./header";
+import { Header } from "@/app/components/Header";
 
 export default async function CandidatesLayout({
   children,

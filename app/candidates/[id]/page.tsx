@@ -39,10 +39,12 @@ interface CandidateDetail {
   locationText: string | null;
   industry: string | null;
   profileUrl: string | null;
+   profileImageUrl: string | null;
   rawJson: unknown;
   positions: Position[];
   educations: Education[];
   skills: Skill[];
+   companyLogos?: Record<string, string | null>;
 }
 
 function formatDate(d: string | null): string {
@@ -125,6 +127,41 @@ export default function CandidateDetailPage() {
     return months > 0 ? Math.round((months / 12) * 10) / 10 : 0;
   })();
 
+  const initials =
+    (candidate.fullName ?? "")
+      .trim()
+      .split(/\s+/)
+      .map((part) => part[0])
+      .join("")
+      .slice(0, 2) || "·";
+
+  const groupedPositions = (() => {
+    const groups: { companyName: string; positions: Position[] }[] = [];
+    const indexByName = new Map<string, number>();
+
+    for (const p of candidate.positions) {
+      const name = p.companyName || "(회사명 없음)";
+      let idx = indexByName.get(name);
+      if (idx === undefined) {
+        idx = groups.length;
+        groups.push({ companyName: name, positions: [] });
+        indexByName.set(name, idx);
+      }
+      groups[idx].positions.push(p);
+    }
+
+    // 각 회사 내에서는 시작일 기준 최근 순으로 정렬
+    for (const g of groups) {
+      g.positions.sort((a, b) => {
+        const aDate = a.startDate ? new Date(a.startDate) : new Date(0);
+        const bDate = b.startDate ? new Date(b.startDate) : new Date(0);
+        return bDate.getTime() - aDate.getTime();
+      });
+    }
+
+    return groups;
+  })();
+
   return (
     <div>
       <div className="mb-8 flex items-start justify-between">
@@ -132,8 +169,24 @@ export default function CandidateDetailPage() {
           <Link href="/candidates" className="text-blue-600 hover:underline inline-block mb-6">
             ← 목록으로
           </Link>
-          <h1 className="text-2xl font-bold mt-2">{candidate.fullName ?? "이름 없음"}</h1>
-          <p className="text-gray-600 mt-1">{candidate.headline ?? "-"}</p>
+          <div className="flex items-center gap-4 mt-2">
+            <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-semibold overflow-hidden shrink-0">
+              {candidate.profileImageUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={candidate.profileImageUrl}
+                  alt={candidate.fullName ?? "프로필 이미지"}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span>{initials}</span>
+              )}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold">{candidate.fullName ?? "이름 없음"}</h1>
+              <p className="text-gray-600 mt-1">{candidate.headline ?? "-"}</p>
+            </div>
+          </div>
         </div>
         <button
           onClick={() => setShowRawJson((s) => !s)}
@@ -186,26 +239,50 @@ export default function CandidateDetailPage() {
             <p className="text-gray-500">경력 정보가 없습니다.</p>
           ) : (
             <div className="space-y-6">
-              {candidate.positions.map((p) => (
-                <div key={p.id} className="border-b border-gray-200 pb-4 last:border-0">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-lg">{p.title}</h3>
-                      <p className="text-blue-600">{p.companyName}</p>
-                      {p.employmentType && (
-                        <span className="text-sm text-gray-500">{p.employmentType}</span>
-                      )}
-                    </div>
-                    <div className="text-sm text-gray-500 whitespace-nowrap">
-                      {formatDateMonth(p.startDate)} ~ {p.isCurrent ? "현재" : formatDateMonth(p.endDate)}
-                      {formatDuration(p.startDate, p.endDate, p.isCurrent)}
+              {groupedPositions.map((group) => (
+                <div key={group.companyName} className="border-b border-gray-200 pb-4 last:border-0">
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 text-xs overflow-hidden shrink-0">
+                        {candidate.companyLogos?.[group.companyName] ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={candidate.companyLogos[group.companyName] as string}
+                            alt={group.companyName}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <span>{group.companyName.slice(0, 2)}</span>
+                        )}
+                      </div>
+                      <Link
+                        href={`/company/${encodeURIComponent(group.companyName)}`}
+                        className="text-blue-600 font-semibold hover:underline"
+                      >
+                        {group.companyName}
+                      </Link>
                     </div>
                   </div>
-                  {p.description && (
-                    <p className="mt-2 text-gray-600 text-sm whitespace-pre-wrap">
-                      {p.description}
-                    </p>
-                  )}
+                  <div className="space-y-3">
+                    {group.positions.map((p) => (
+                      <div key={p.id} className="flex justify-between items-start text-sm">
+                        <div className="pr-4">
+                          <div className="font-semibold text-gray-900">{p.title}</div>
+                          {p.employmentType && (
+                            <div className="text-xs text-gray-500 mt-0.5">{p.employmentType}</div>
+                          )}
+                          {p.description && (
+                            <p className="mt-1 text-gray-600 whitespace-pre-wrap">{p.description}</p>
+                          )}
+                        </div>
+                        <div className="text-xs text-gray-500 whitespace-nowrap text-right">
+                          {formatDateMonth(p.startDate)} ~{" "}
+                          {p.isCurrent ? "현재" : formatDateMonth(p.endDate)}
+                          {formatDuration(p.startDate, p.endDate, p.isCurrent)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

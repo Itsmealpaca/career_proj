@@ -3,14 +3,14 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { Header } from "@/app/components/Header";
 
-export default async function AdminLayout({
+export default async function CompanyLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
   if (!session) {
-    redirect("/login?callbackUrl=/admin/ingest");
+    redirect("/login?callbackUrl=/company");
   }
 
   return (
